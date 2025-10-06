@@ -4,20 +4,30 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Bist du 18 Jahre alt? ");
-        String eingabe = scanner.nextLine();
+        boolean test = false;
+        do {
+            Scanner scanner = new Scanner(System.in);
 
+            System.out.print("Bist du 18 Jahre alt? ");
+            String eingabe = scanner.nextLine();
 
+            if (eingabe.equalsIgnoreCase("Ja")||eingabe.equalsIgnoreCase("Yes")) {
+                System.out.println("Okdoky");
+                test = true;
+            } else {
+                System.out.println("No Entry");
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
 
-        if (eingabe.equalsIgnoreCase("Ja")||eingabe.equalsIgnoreCase("Yes")) {
-            System.out.println("Okdoky");
+        }while (!test);
 
-        }
     }
 }
-
 
 
 
